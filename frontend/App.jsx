@@ -1,7 +1,5 @@
-
 import { useState } from 'react';
-import AnalysisInput from './components/AnalysisInput';
-import ResultCard from './components/ResultCard';
+import Tabs from './components/Tabs';
 
 function App() {
   const [input, setInput] = useState('');
@@ -42,16 +40,14 @@ function App() {
           <h1 className="text-4xl font-bold tracking-tight">🧠 Agentic Validator</h1>
           <p className="mt-2 text-indigo-600 text-lg font-semibold">Advanced Text Analysis</p>
         </div>
-        <div className="bg-white rounded-2xl shadow-xl">
-          <AnalysisInput
-            input={input}
-            setInput={setInput}
-            handleSubmit={handleSubmit}
-            isLoading={isLoading}
-            error={error}
-          />
-          <ResultCard result={result} />
-        </div>
+        <Tabs
+          input={input}
+          setInput={setInput}
+          handleSubmit={handleSubmit}
+          result={result}
+          isLoading={isLoading}
+          error={error}
+        />
         <p className="mt-8 text-center text-sm text-gray-500">Powered by AI agents</p>
       </div>
     </div>
